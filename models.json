@@ -1,0 +1,1891 @@
+{
+  "listData": [
+    {
+      "id": 561,
+      "uuid": "md-883d919c-8063-4da3-a9ff-ebd73affc6d1",
+      "name": "MiniMax M2.5",
+      "code": "minimax-m2.5",
+      "path": "minimax/minimax-m2.5",
+      "description": "MiniMax-M2.5 is MiniMax's flagship open-weight Mixture-of-Experts model with 229B total parameters (~10B active per forward pass), purpose-built for advanced coding and agentic workflows. It delivers SOTA results on SWE-Bench Verified (80.2%), Multi-SWE-Bench, BrowseComp agent search, and long-horizon tool use, while remaining dramatically cheaper and faster than frontier closed models.",
+      "isFree": false,
+      "isEnabled": true,
+      "country": null,
+      "inputPrice": "0.3",
+      "outputPrice": "2.4",
+      "unit": "token",
+      "modelStatus": "ENABLED",
+      "linkDocument": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5",
+      "linkModel": "https://maas-llm-aiplatform-hcm.api.vngcloud.vn/maas/user-111790/minimax/minimax-m2.5",
+      "types": [
+        "responses",
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [
+        "chat",
+        "messages",
+        "responses"
+      ],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-04-17T10:50:49.000+07:00",
+      "provider": {
+        "id": 27,
+        "name": "Minimax",
+        "code": "minimax"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 21,
+          "name": "Responses",
+          "code": "responses"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 547,
+      "uuid": "md-qwen35-27b-0001",
+      "name": "Qwen 3.5 27B",
+      "code": "qwen3-5-27b",
+      "path": "qwen/qwen3-5-27b",
+      "description": "Qwen3.5-27B is a 27B parameter multimodal foundation model by Alibaba featuring unified vision-language capabilities, hybrid\n   Gated DeltaNet + MoE architecture for efficient inference, native thinking mode with reasoning, 262K context window\n  (extensible to 1M tokens), support for 201 languages, and advanced tool use/agentic capabilities. Excels at coding (SWE-bench\n  72.4%), math (HMMT 91.2%), and long document processing.",
+      "isFree": true,
+      "isEnabled": true,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "ENABLED",
+      "linkDocument": "https://huggingface.co/Qwen/Qwen3.5-27B",
+      "linkModel": "https://maas-llm-aiplatform-hcm.api.vngcloud.vn/maas/user-111790/qwen/qwen3-5-27b",
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [
+        "chat",
+        "messages"
+      ],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-03-30T14:45:39.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 549,
+      "uuid": "md-a116e171-a9d6-4495-9e6d-821902eb3125",
+      "name": "Gemma 4 31B-IT",
+      "code": "gemma-4-31b-it",
+      "path": "google/gemma-4-31b-it",
+      "description": "Gemma 4 31B-IT is Google's open-weight instruction-tuned model from the Gemma 4 family, featuring 31 billion parameters with native multimodal support for text and image inputs. It offers a 128K token context window and is optimized for instruction following, reasoning, coding, and vision-language tasks.",
+      "isFree": false,
+      "isEnabled": true,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "ENABLED",
+      "linkDocument": "https://ai.google.dev/gemma/docs/gemma-4",
+      "linkModel": "https://maas-llm-aiplatform-hcm.api.vngcloud.vn/maas/user-111790/google/gemma-4-31b-it",
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [
+        "chat",
+        "messages"
+      ],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-04-06T16:57:00.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 564,
+      "uuid": "md-57ff7edb-da5b-4c56-bbc5-eb0a3139ffe5",
+      "name": "Qwen 3.7 Plus",
+      "code": "qwen3.7-plus",
+      "path": "qwen/qwen3.7-plus",
+      "description": "Qwen3.7-Plus is the balanced flagship tier of Alibaba's Qwen3.7 commercial lineup (plus / flash / max), served over the OpenAI-compatible Alibaba Cloud DashScope API. It positions inference quality, cost and speed between the Max and Flash tiers — ideal for medium-to-high complexity tasks. It ships with a 1M-token context window, hybrid thinking / non-thinking modes, built-in tools with adaptive tool use, and strong agentic coding, reasoning and multilingual capabilities across the Qwen3 series.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": "https://qwen.ai/blog?id=qwen3.7-plus",
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-06-09T20:50:32.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 563,
+      "uuid": "md-856f5124-ede9-4766-9f17-54c90b700a38",
+      "name": "DeepSeek V4 Flash",
+      "code": "deepseek-v4-flash",
+      "path": "deepseek/deepseek-v4-flash",
+      "description": "DeepSeek-V4 Flash is the speed- and cost-optimized tier of the DeepSeek-V4 family. On the same MLA + DeepSeekMoE backbone it activates fewer experts per token to deliver high-throughput, low-latency responses for chat, summarization and lightweight reasoning, while preserving a 128K token context window. Served over an OpenAI-compatible API.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": "https://api-docs.deepseek.com",
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-06-09T20:50:32.000+07:00",
+      "provider": {
+        "id": 7,
+        "name": "DeepSeek",
+        "code": "deepseek"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 562,
+      "uuid": "md-6884d3fd-57f3-44d2-92cb-9ed5dd809a2b",
+      "name": "DeepSeek V4 Pro",
+      "code": "deepseek-v4-pro",
+      "path": "deepseek/deepseek-v4-pro",
+      "description": "DeepSeek-V4 Pro is the flagship tier of the DeepSeek-V4 family — a Mixture-of-Experts (MoE) model built on Multi-head Latent Attention (MLA) and the DeepSeekMoE architecture with an auxiliary-loss-free load-balancing strategy. It delivers state-of-the-art reasoning, math, coding and agentic performance with a 128K token context window, served over an OpenAI-compatible API.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": "https://api-docs.deepseek.com",
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-06-09T20:50:32.000+07:00",
+      "provider": {
+        "id": 7,
+        "name": "DeepSeek",
+        "code": "deepseek"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 550,
+      "uuid": "md-ea829fc8-1ff6-4a75-b4ec-af2919b5cb76",
+      "name": "Qwen 3.6 27B",
+      "code": "qwen3.6-27b",
+      "path": "qwen/qwen3.6-27b",
+      "description": "Qwen3.6-27B is Alibaba's flagship 27.8B-parameter dense multimodal foundation model released April 2026. It features a hybrid architecture combining Gated DeltaNet (linear attention) with Gated Attention blocks for efficient long-context inference, native 262K context (extensible to ~1M tokens via YaRN), vision-language understanding (text/image/video input), and Thinking Preservation that retains reasoning traces across conversation history. Despite being a dense 27B model, it matches or exceeds the much larger Qwen3.5 397B MoE on agentic coding (SWE-bench Verified 77.2), and approaches Claude Opus 4.6 on software engineering benchmarks. Apache-2.0 licensed.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": "https://qwen.ai/blog?id=qwen3.6-27b",
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-05-26T13:52:52.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 528,
+      "uuid": "md-b482ff0f-78bb-4ba7-bd7f-4e3677fd5f0d",
+      "name": "Gemini 3.1 Pro Preview",
+      "code": "gemini-3.1-pro-preview",
+      "path": "gemini/gemini-3.1-pro-preview",
+      "description": "Gemini 3.1 Pro Preview is Google's most advanced thinking model in the Gemini 3.1 family, featuring improved reasoning, better token efficiency, and enhanced factual consistency. It supports a 1M token context window and accepts text, image, video, audio, and PDF inputs. Optimized for software engineering and agentic workflows, it supports extended thinking, code execution, function calling, grounding with Google Search, and structured outputs.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2026-03-25T10:13:58.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 523,
+      "uuid": "md-69d9ec5b-6903-4af4-ad3c-be73de340097",
+      "name": "Qwen 3 235B-A22B Instruct 2507",
+      "code": "qwen3-235b-a22b-instruct-2507",
+      "path": "qwen/qwen3-235b-a22b-instruct-2507",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 521,
+      "uuid": "md-24380bad-b5b2-4b13-8b31-1da6330a7390",
+      "name": "BGE-M3",
+      "code": "bge-m3",
+      "path": "baai/bge-m3",
+      "description": "BGE is the new series of Qwen large language models",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 13,
+        "name": "BAAI",
+        "code": "baai"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 519,
+      "uuid": "md-425a8b35-f105-438b-bf02-ab6dd1bd9285",
+      "name": "Qwen 3-VL 235B-A22B Instruct",
+      "code": "qwen3-vl-235b-a22b-instruct",
+      "path": "qwen/qwen3-vl-235b-a22b-instruct",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 515,
+      "uuid": "md-9d843d1c-3f8b-4106-bf1a-7ddd2b231595",
+      "name": "Gemma 3 27B-IT",
+      "code": "gemma-3-27b-it",
+      "path": "google/gemma-3-27b-it",
+      "description": "Gemma 3 models are well-suited for a variety of text generation and image understanding tasks, including question answering, summarization, and reasoning",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [],
+      "useCases": []
+    },
+    {
+      "id": 513,
+      "uuid": "md-ac36d54d-667e-4a53-8666-5fa2b7c1a2c3",
+      "name": "Nemotron 3 Nano 30B-A3B",
+      "code": "nemotron-3-nano-30b-a3b",
+      "path": "nvidia/nemotron-3-nano-30b-a3b",
+      "description": "Nemotron-3-Nano-30B-A3B is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and tasks by first generating a reasoning trace and then concluding with a final response. The model's reasoning capabilities can be configured through a flag in the chat template. If the user prefers the model to provide its final answer without intermediate reasoning traces, it can be configured to do so, albeit with a slight decrease in accuracy for harder prompts that require reasoning. Conversely, allowing the model to generate reasoning traces first generally results in higher-quality final solutions to queries and tasks.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 25,
+        "name": "NVIDIA",
+        "code": "nvidia"
+      },
+      "modelTypes": [],
+      "useCases": []
+    },
+    {
+      "id": 165,
+      "uuid": "md-80604e25-6b15-4820-ad78-38e0d40b851a",
+      "name": "ByteDance Seed 1.6 Flash",
+      "code": "seed-1-6-flash-250715",
+      "path": "bytedance/seed-1-6-flash-250715",
+      "description": "A fast, inference-optimized version of the Seed-1.6 multimodal model. Supports text, image, and video input, with 256K context, deep thinking mode, and structured JSON output. It is designed for extremely low latency inference.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-11-06T11:29:02.000+07:00",
+      "provider": {
+        "id": 23,
+        "name": "Bytedance",
+        "code": "bytedance"
+      },
+      "modelTypes": [],
+      "useCases": []
+    },
+    {
+      "id": 161,
+      "uuid": "md-9e132bdd-79c2-4b28-a584-1e62d05b500e",
+      "name": "ByteDance Seed 1.6",
+      "code": "seed-1-6-250915",
+      "path": "bytedance/seed-1-6-250915",
+      "description": "A powerful multimodal deep thinking LLM from ByteDance's Seed-1.6 series with a 256K token context window, supporting text, image, and video input. It can operate in 3 modes -- full reasoning, no reasoning, or adaptive reasoning (via AdaCoT) -- for better efficiency vs. performance trade-offs.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-11-06T11:29:02.000+07:00",
+      "provider": {
+        "id": 23,
+        "name": "Bytedance",
+        "code": "bytedance"
+      },
+      "modelTypes": [],
+      "useCases": []
+    },
+    {
+      "id": 155,
+      "uuid": "md-fa2cbfb8-3242-420a-9e7a-81e1fe51e7a4",
+      "name": "GreenNode IDP",
+      "code": "idp",
+      "path": "greennode/idp",
+      "description": "GreenNode IDP is an Intelligent Document Processing solution researched and developed by GreenNode. Unlike traditional OCR technologies that only convert images into plain text, GreenNode IDP integrates three core technologies—OCR, GenAI, and LLM—allowing the system not only to recognize but also to understand semantics, accurately extract data, validate information, and automatically classify documents.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "ocr"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-10-08T11:14:29.000+07:00",
+      "provider": {
+        "id": 9,
+        "name": "GreenNode",
+        "code": "greennode"
+      },
+      "modelTypes": [
+        {
+          "id": 15,
+          "name": "OCR",
+          "code": "ocr"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 151,
+      "uuid": "md-b5513468-c712-4719-bec5-37bd6ee1e868",
+      "name": "GPT-5 Nano",
+      "code": "gpt-5-nano",
+      "path": "openai/gpt-5-nano",
+      "description": "GPT-5 nano is OpenAI's latest flagship model, designed for native multi-modal capabilities across text, audio, and vision. It represents a significant leap forward in natural human-computer interaction, allowing for real-time conversations with extremely low latency, akin to human-to-human speech. GPT-4o can seamlessly process and generate content across these modalities, understanding nuanced inputs like tone of voice, visual cues, and complex textual prompts. This model is engineered for unparalleled speed, efficiency, and intelligence, making it ideal for applications that demand sophisticated, real-time, and natural interactions.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "responses",
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 21,
+          "name": "Responses",
+          "code": "responses"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 149,
+      "uuid": "md-91e38fae-8b0c-4342-a13e-6aa8e99d18ee",
+      "name": "GPT-5 Mini",
+      "code": "gpt-5-mini",
+      "path": "openai/gpt-5-mini",
+      "description": "GPT-5 mini is OpenAI's latest flagship model, designed for native multi-modal capabilities across text, audio, and vision. It represents a significant leap forward in natural human-computer interaction, allowing for real-time conversations with extremely low latency, akin to human-to-human speech. GPT-4o can seamlessly process and generate content across these modalities, understanding nuanced inputs like tone of voice, visual cues, and complex textual prompts. This model is engineered for unparalleled speed, efficiency, and intelligence, making it ideal for applications that demand sophisticated, real-time, and natural interactions.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "responses",
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 21,
+          "name": "Responses",
+          "code": "responses"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 147,
+      "uuid": "md-4e882cee-fed7-470c-9864-3be2d490795b",
+      "name": "GPT-5",
+      "code": "gpt-5",
+      "path": "openai/gpt-5",
+      "description": "GPT-5 is OpenAI's latest flagship model, designed for native multi-modal capabilities across text, audio, and vision. It represents a significant leap forward in natural human-computer interaction, allowing for real-time conversations with extremely low latency, akin to human-to-human speech. GPT-4o can seamlessly process and generate content across these modalities, understanding nuanced inputs like tone of voice, visual cues, and complex textual prompts. This model is engineered for unparalleled speed, efficiency, and intelligence, making it ideal for applications that demand sophisticated, real-time, and natural interactions.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "responses",
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 21,
+          "name": "Responses",
+          "code": "responses"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 131,
+      "uuid": "md-7e9d4e08-c165-445a-883a-bd6f00dad403",
+      "name": "DeepSeek R1 Qwen 3 8B",
+      "code": "deepseek-r1-qwen3-8b",
+      "path": "deepseek/deepseek-r1-qwen3-8b",
+      "description": "DeepSeek-Chat is a highly capable and efficient large language model developed by DeepSeek AI, specifically optimized for conversational and instruction-following tasks. It is often derived from the DeepSeek-V2 base model, which is known for its Mixture-of-Experts (MoE) architecture, offering a balance of high performance and computational efficiency. DeepSeek-Chat excels at understanding complex prompts, maintaining coherent dialogue across multiple turns, and generating high-quality, relevant responses. Its capabilities extend beyond simple chat to include sophisticated code generation, logical reasoning, and creative text production, making it a versatile tool for a wide array of AI applications.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,27/M tokens",
+      "outputPrice": "$1,10/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:02:37.000+07:00",
+      "provider": {
+        "id": 7,
+        "name": "DeepSeek",
+        "code": "deepseek"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 129,
+      "uuid": "md-065e5f25-f87b-48df-beb3-18d94169c86f",
+      "name": "Qwen 3 Reranker 8B",
+      "code": "qwen3-reranker-8b",
+      "path": "qwen/qwen3-reranker-8b",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "rerank"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 13,
+          "name": "Rerank",
+          "code": "rerank"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 127,
+      "uuid": "e05fa796-444c-49a2-a5e3-2a6b198df4a0",
+      "name": "Gemini 2.5 Flash Preview TTS",
+      "code": "gemini-2.5-flash-preview-tts",
+      "path": "gemini/gemini-2.5-flash-preview-tts",
+      "description": "Google's Gemini 2.5 Flash Preview TTS is a text-to-speech model designed for cost-efficient, everyday applications. It is part of the broader Gemini-TTS technology, which allows for granular control over generated audio through text-based prompts.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "tts"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-06-09T10:46:02.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 7,
+          "name": "Text to Speech",
+          "code": "tts"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 125,
+      "uuid": "md-1670d077-7b13-4e7f-b2cd-35ef528bdd6d",
+      "name": "Qwen 3 Embedding 8B",
+      "code": "qwen3-embedding-8b",
+      "path": "qwen/qwen3-embedding-8b",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 123,
+      "uuid": "md-3ab7377c-56ec-47be-bc8a-49d81bd63f5d",
+      "name": "Qwen 3 235B-A22B Thinking 2507",
+      "code": "qwen3-235b-a22b-thinking-2507",
+      "path": "qwen/qwen3-235b-a22b-thinking-2507",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 121,
+      "uuid": "md-16e9ac86-b93e-48c4-b7fc-e821a851941a",
+      "name": "Qwen 3 30B-A3B Thinking 2507",
+      "code": "qwen3-30b-a3b-thinking-2507",
+      "path": "qwen/qwen3-30b-a3b-thinking-2507",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 119,
+      "uuid": "md-5d928bff-629c-40cd-b1f3-b26166c1c54a",
+      "name": "Gemini Embedding 001",
+      "code": "gemini-embedding-001",
+      "path": "gemini/gemini-embedding-001",
+      "description": "gemini-embedding-001 is Google's most powerful and versatile AI model, offering a groundbreaking 1 million token context window. This massive context window enables it to process and understand vast amounts of information—including entire books, lengthy code repositories, and hours of video—in a single go. Designed for general-purpose use, Gemini 1.5 Pro excels at complex reasoning, multi-modal understanding, and delivering highly nuanced outputs across a wide range of tasks. It's the ideal choice for developers and enterprises building advanced AI applications that require unparalleled depth and breadth of understanding.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$1,25/M tokens",
+      "outputPrice": "$5/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:40:33.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 117,
+      "uuid": "md-2720bc8d-1370-4b50-a053-605e84c225a1",
+      "name": "OpenAI Text Embedding Ada 002",
+      "code": "text-embedding-ada-002",
+      "path": "openai/text-embedding-ada-002",
+      "description": "openai-text-embedding-ada-002 is a previous-generation embedding model widely adopted for its affordability and reliability. It creates meaningful vector representations of text for semantic search, clustering, and topic detection. Despite being older, it remains a dependable choice for large-scale applications thanks to its cost-effectiveness and integration across many AI pipelines.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,20/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 115,
+      "uuid": "md-58d9658e-9532-4f40-86ba-f9ba6b082558",
+      "name": "OpenAI Text Embedding 3 Large",
+      "code": "text-embedding-3-large",
+      "path": "openai/text-embedding-3-large",
+      "description": "openai-text-embedding-3-large is OpenAI's most advanced embedding model, delivering state-of-the-art semantic understanding. It generates large, information-rich embeddings that capture nuance, context, and relationships between concepts. This makes it ideal for RAG pipelines, semantic search, and recommendation systems that demand high accuracy.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,20/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 113,
+      "uuid": "md-2fd054bf-506c-4b16-8636-8bed8d35cf92",
+      "name": "OpenAI Text Embedding 3 Small",
+      "code": "text-embedding-3-small",
+      "path": "openai/text-embedding-3-small",
+      "description": "openai-text-embedding-3-small is a lightweight, cost-efficient embedding model designed for high-volume workloads. It produces compact embeddings that balance semantic accuracy with affordability, making it well-suited for search ranking, intent classification, and clustering tasks where speed and scale matter more than maximum precision.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,20/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 109,
+      "uuid": "md-c176234f-e4c7-4434-8271-a25aa4efd8db",
+      "name": "Gemini 2.5 Flash Lite",
+      "code": "gemini-2.5-flash-lite",
+      "path": "gemini/gemini-2.5-flash-lite",
+      "description": "Gemini 2.5 Flash Lite is Google's most powerful and versatile AI model, offering a groundbreaking 1 million token context window. This massive context window enables it to process and understand vast amounts of information—including entire books, lengthy code repositories, and hours of video—in a single go. Designed for general-purpose use, Gemini 1.5 Pro excels at complex reasoning, multi-modal understanding, and delivering highly nuanced outputs across a wide range of tasks. It's the ideal choice for developers and enterprises building advanced AI applications that require unparalleled depth and breadth of understanding.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$1,25/M tokens",
+      "outputPrice": "$5/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat",
+        "generateContent"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:40:33.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 17,
+          "name": "Gemini generate content",
+          "code": "generateContent"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 105,
+      "uuid": "md-7c838436-12d0-4174-ad8b-ad324d85a6b9",
+      "name": "GPT-OSS 20B",
+      "code": "gpt-oss-20b",
+      "path": "openai/gpt-oss-20b",
+      "description": "gpt-oss-20b is an upcoming or recently released, more lightweight, and highly cost-effective version of the GPT-4o family. It is designed to offer a compelling balance of performance and affordability, making advanced multi-modal AI accessible for a broader range of applications and developers. While not as powerful as its larger counterpart, GPT-4o mini retains the core multi-modal capabilities and a generous context window (expected to be 128K tokens), making it exceptionally well-suited for high-volume, cost-sensitive use cases where the full intelligence of GPT-4o might be overkill. It aims to deliver a faster and more efficient experience, especially for standard tasks.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,6/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-02T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 103,
+      "uuid": "md-bc97ca68-afd2-41cd-8894-25d252a39024",
+      "name": "GPT-OSS 120B",
+      "code": "gpt-oss-120b",
+      "path": "openai/gpt-oss-120b",
+      "description": "gpt-oss-120b is an upcoming or recently released, more lightweight, and highly cost-effective version of the GPT-4o family. It is designed to offer a compelling balance of performance and affordability, making advanced multi-modal AI accessible for a broader range of applications and developers. While not as powerful as its larger counterpart, GPT-4o mini retains the core multi-modal capabilities and a generous context window (expected to be 128K tokens), making it exceptionally well-suited for high-volume, cost-sensitive use cases where the full intelligence of GPT-4o might be overkill. It aims to deliver a faster and more efficient experience, especially for standard tasks.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,6/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 101,
+      "uuid": "md-37404b64-0656-4c85-978c-a6e1b84ea8ac",
+      "name": "Gemini 2.5 Pro",
+      "code": "gemini-2.5-pro",
+      "path": "gemini/gemini-2.5-pro",
+      "description": "Gemini 2.5 Pro is Google's most powerful and versatile AI model, offering a groundbreaking 1 million token context window. This massive context window enables it to process and understand vast amounts of information—including entire books, lengthy code repositories, and hours of video—in a single go. Designed for general-purpose use, Gemini 1.5 Pro excels at complex reasoning, multi-modal understanding, and delivering highly nuanced outputs across a wide range of tasks. It's the ideal choice for developers and enterprises building advanced AI applications that require unparalleled depth and breadth of understanding.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$1,25/M tokens",
+      "outputPrice": "$5/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat",
+        "generateContent",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:40:33.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 17,
+          "name": "Gemini generate content",
+          "code": "generateContent"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 99,
+      "uuid": "md-f35ebc1a-5c84-463f-b4c0-be40776ff82f",
+      "name": "Gemini 2.5 Flash",
+      "code": "gemini-2.5-flash",
+      "path": "gemini/gemini-2.5-flash",
+      "description": "Gemini 2.5 Flash is Google's most powerful and versatile AI model, offering a groundbreaking 1 million token context window. This massive context window enables it to process and understand vast amounts of information—including entire books, lengthy code repositories, and hours of video—in a single go. Designed for general-purpose use, Gemini 1.5 Pro excels at complex reasoning, multi-modal understanding, and delivering highly nuanced outputs across a wide range of tasks. It's the ideal choice for developers and enterprises building advanced AI applications that require unparalleled depth and breadth of understanding.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$1,25/M tokens",
+      "outputPrice": "$5/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat",
+        "generateContent"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:40:33.000+07:00",
+      "provider": {
+        "id": 3,
+        "name": "Google",
+        "code": "google"
+      },
+      "modelTypes": [
+        {
+          "id": 17,
+          "name": "Gemini generate content",
+          "code": "generateContent"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 85,
+      "uuid": "md-f115308d-6696-465f-9f5c-46452590b388",
+      "name": "GPT-3.5 Turbo Instruct",
+      "code": "gpt-3.5-turbo-instruct",
+      "path": "openai/gpt-3.5-turbo-instruct",
+      "description": "GPT-3.5 Turbo Instruct is a highly efficient and cost-effective model from OpenAI, specifically designed for instruction-following completion tasks. Unlike the gpt-3.5-turbo model which is optimized for multi-turn conversational chat, gpt-3.5-turbo-instruct is built to take a single prompt or instruction and generate a direct, high-quality completion. This makes it ideal for use cases where the interaction is not conversational but rather focuses on executing a specific command or generating a piece of text based on a given instruction. It offers strong performance for a wide range of text generation, summarization, and data extraction tasks, serving as a powerful and economical alternative for developers migrating from older GPT-3 completion models.\n",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,20/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "completion"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 11,
+          "name": "Completion",
+          "code": "completion"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "uuid": "md-3d093190-3a79-48d1-8bdb-9b6ea975984f",
+      "name": "Qwen 3 Coder 480B-A35B Instruct",
+      "code": "qwen3-coder-480b-a35b-instruct",
+      "path": "qwen/qwen3-coder-480b-a35b-instruct",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-07-31T09:30:11.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 83,
+      "uuid": "md-62e59530-91f8-4a0a-9f93-675203e48703",
+      "name": "GPT Image 1",
+      "code": "gpt-image-1",
+      "path": "openai/gpt-image-1",
+      "description": "Envisioning a GPT-Image-1 suggests a significant evolution in multi-modal AI, moving beyond current text-to-image models like DALL-E. This conceptual model would represent OpenAI's endeavor to create a truly unified architecture where language understanding and image generation are intrinsically linked within a single model, rather than being separate systems working in tandem.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "",
+      "outputPrice": "From $0,011 to $0,25 per image",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "image"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 3,
+          "name": "Image Generation",
+          "code": "image"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 11,
+          "name": "Marketing",
+          "code": "marketing"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "uuid": "md-5de1c599-3a03-4d82-8e6e-1620600d9307",
+      "name": "Qwen 3 Coder Plus (2025-07-22)",
+      "code": "qwen3-coder-plus-2025-07-22",
+      "path": "qwen/qwen3-coder-plus-2025-07-22",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-07-31T09:30:11.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 93,
+      "uuid": "md-c86019c1-f6d4-4c12-8bce-29b883904aa4",
+      "name": "Qwen 3 Coder Plus",
+      "code": "qwen3-coder-plus",
+      "path": "qwen/qwen3-coder-plus",
+      "description": "Qwen3 is the new series of Qwen large language models",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "",
+      "inputPrice": "$0,10/M tokens",
+      "outputPrice": "$0,40/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat",
+        "messages"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 11,
+        "name": "Qwen",
+        "code": "qwen"
+      },
+      "modelTypes": [
+        {
+          "id": 23,
+          "name": "Messages",
+          "code": "messages"
+        },
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": []
+    },
+    {
+      "id": 57,
+      "uuid": "md-e4ad2229-8dd1-4f3a-a66e-973c872cfaea",
+      "name": "GreenNode Embedding Large 1007",
+      "code": "greennode-embedding-large-1007",
+      "path": "greennode/greennode-embedding-large-1007",
+      "description": "GreenNode-Embedding-Large-1007 is a powerful text embedding model developed by GreenNode AI, specifically designed to convert text into high-dimensional numerical representations (embeddings) that capture deep semantic meaning. As indicated by \"Large,\" this model aims to provide superior quality embeddings compared to smaller alternatives, enabling more accurate and nuanced similarity searches, clustering, and classification tasks. The \"1007\" likely denotes a specific version or release date (e.g., October 7th, or year/month). GreenNode-Embedding-Large-1007 is ideal for developers and data scientists building advanced AI applications that rely on understanding the true meaning and relationships between pieces of text.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": "vietnamese",
+      "inputPrice": "TBA",
+      "outputPrice": "TBA",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "embedding"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 9,
+        "name": "GreenNode",
+        "code": "greennode"
+      },
+      "modelTypes": [
+        {
+          "id": 9,
+          "name": "Embedding",
+          "code": "embedding"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 1,
+          "name": "Vietnamese",
+          "code": "vietnamese"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "uuid": "md-b6cf337e-6134-4dea-9e4e-fa67519940b9",
+      "name": "GreenMind Medium 14B R1 Chat",
+      "code": "greenmind-medium-14b-r1",
+      "path": "greennode/greenmind-medium-14b-r1",
+      "description": "A 14B Vietnamese language model capable of effectively addressing questions that require intermediate-level reasoning, such as general knowledge, mathematics, natural science and social science topics. By leveraging the Group Relative Policy Optimization strategy for fine-tuning, we guide the model to generate logically coherent responses.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": "vietnamese",
+      "inputPrice": "TBD",
+      "outputPrice": "TBD",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:09:00.000+07:00",
+      "provider": {
+        "id": 9,
+        "name": "GreenNode",
+        "code": "greennode"
+      },
+      "modelTypes": [],
+      "useCases": []
+    },
+    {
+      "id": 51,
+      "uuid": "md-ffc38dd4-ea9d-4ef4-b938-c49ecda733b5",
+      "name": "DeepSeek Reasoner",
+      "code": "deepseek-reasoner",
+      "path": "deepseek/deepseek-reasoner",
+      "description": "DeepSeek-Reasoner is a specialized large language model from DeepSeek AI, meticulously designed and fine-tuned to excel at complex reasoning tasks. Unlike general-purpose chat models, DeepSeek-Reasoner emphasizes logical coherence, step-by-step problem-solving, and the ability to deduce answers from given premises. While often built upon the same powerful base architectures as DeepSeek-Chat (like DeepSeek-V2's MoE), its training and alignment focus on enhancing its analytical capabilities, making it particularly adept at mathematics, programming logic, and intricate problem-solving scenarios. It aims to provide highly accurate and logically sound responses, especially where a structured thought process is crucial.",
+      "isFree": true,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,55/M tokens",
+      "outputPrice": "$2,19/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:02:37.000+07:00",
+      "provider": {
+        "id": 7,
+        "name": "DeepSeek",
+        "code": "deepseek"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        },
+        {
+          "id": 13,
+          "name": "Technology",
+          "code": "technology"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "uuid": "md-218a17c3-ab49-4894-9ecb-4d3e17698fdf",
+      "name": "DeepSeek Chat",
+      "code": "deepseek-chat",
+      "path": "deepseek/deepseek-chat",
+      "description": "DeepSeek-Chat is a highly capable and efficient large language model developed by DeepSeek AI, specifically optimized for conversational and instruction-following tasks. It is often derived from the DeepSeek-V2 base model, which is known for its Mixture-of-Experts (MoE) architecture, offering a balance of high performance and computational efficiency. DeepSeek-Chat excels at understanding complex prompts, maintaining coherent dialogue across multiple turns, and generating high-quality, relevant responses. Its capabilities extend beyond simple chat to include sophisticated code generation, logical reasoning, and creative text production, making it a versatile tool for a wide array of AI applications.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,27/M tokens",
+      "outputPrice": "$1,10/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T18:02:37.000+07:00",
+      "provider": {
+        "id": 7,
+        "name": "DeepSeek",
+        "code": "deepseek"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        },
+        {
+          "id": 7,
+          "name": "Research",
+          "code": "research"
+        },
+        {
+          "id": 11,
+          "name": "Marketing",
+          "code": "marketing"
+        },
+        {
+          "id": 9,
+          "name": "Finance",
+          "code": "finance"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "uuid": "md-2e89b93f-1f40-488c-bc5d-f1f756142943",
+      "name": "GPT-3.5 Turbo",
+      "code": "gpt-3.5-turbo",
+      "path": "openai/gpt-3.5-turbo",
+      "description": "GPT-3.5 Turbo is OpenAI's highly optimized and cost-effective model, primarily designed for chat and conversational applications. It offers a significant balance of speed, performance, and affordability, making it one of the most widely used models for integrating AI capabilities into various products and services. While primarily a text-based model, it delivers strong performance across a broad spectrum of natural language processing tasks, from creative writing to complex data extraction, making it an excellent choice for applications that prioritize efficiency and economic scaling. It has seen numerous iterations and improvements since its initial release, focusing on reliability and usability.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$3/M tokens",
+      "outputPrice": "$6/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "uuid": "md-fb1e74b3-9f9f-40d6-8570-7c6296bbee98",
+      "name": "GPT-4o Mini",
+      "code": "gpt-4o-mini",
+      "path": "openai/gpt-4o-mini",
+      "description": "GPT-4o mini is an upcoming or recently released, more lightweight, and highly cost-effective version of the GPT-4o family. It is designed to offer a compelling balance of performance and affordability, making advanced multi-modal AI accessible for a broader range of applications and developers. While not as powerful as its larger counterpart, GPT-4o mini retains the core multi-modal capabilities and a generous context window (expected to be 128K tokens), making it exceptionally well-suited for high-volume, cost-sensitive use cases where the full intelligence of GPT-4o might be overkill. It aims to deliver a faster and more efficient experience, especially for standard tasks.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$0,15/M tokens",
+      "outputPrice": "$0,6/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "uuid": "md-0e920ed2-0600-4ef9-a792-120447f8422c",
+      "name": "GPT-4o",
+      "code": "gpt-4o",
+      "path": "openai/gpt-4o",
+      "description": "GPT-4o is OpenAI's latest flagship model, designed for native multi-modal capabilities across text, audio, and vision. It represents a significant leap forward in natural human-computer interaction, allowing for real-time conversations with extremely low latency, akin to human-to-human speech. GPT-4o can seamlessly process and generate content across these modalities, understanding nuanced inputs like tone of voice, visual cues, and complex textual prompts. This model is engineered for unparalleled speed, efficiency, and intelligence, making it ideal for applications that demand sophisticated, real-time, and natural interactions.",
+      "isFree": false,
+      "isEnabled": false,
+      "country": null,
+      "inputPrice": "$2,5/M tokens",
+      "outputPrice": "$10/M tokens",
+      "unit": "token",
+      "modelStatus": "DISABLED",
+      "linkDocument": null,
+      "linkModel": null,
+      "types": [
+        "chat"
+      ],
+      "enabledTypes": [],
+      "hasGuardrails": false,
+      "hasRateLimit": false,
+      "createdAt": "2025-05-07T17:53:41.000+07:00",
+      "provider": {
+        "id": 5,
+        "name": "OpenAI",
+        "code": "openai"
+      },
+      "modelTypes": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "code": "chat"
+        }
+      ],
+      "useCases": [
+        {
+          "id": 3,
+          "name": "General Tasks",
+          "code": "general"
+        },
+        {
+          "id": 7,
+          "name": "Research",
+          "code": "research"
+        },
+        {
+          "id": 11,
+          "name": "Marketing",
+          "code": "marketing"
+        },
+        {
+          "id": 13,
+          "name": "Technology",
+          "code": "technology"
+        },
+        {
+          "id": 5,
+          "name": "Translation",
+          "code": "translation"
+        },
+        {
+          "id": 9,
+          "name": "Finance",
+          "code": "finance"
+        }
+      ]
+    }
+  ],
+  "page": 1,
+  "pageSize": 100,
+  "totalPage": 1,
+  "totalItem": 46
+}

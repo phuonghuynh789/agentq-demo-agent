@@ -1,0 +1,11 @@
+{
+  "wizard_step": 9,
+  "project_name": "test-case-generator",
+  "framework": "LangChain",
+  "agent_identity": null,
+  "auth_configured": true,
+  "runtime_id": "runtime-bd0e86c9-359a-41b1-bae5-a8895860bf6e",
+  "memory_id": null,
+  "aip_key_name": null,
+  "cr_repo_name": "111480-abp111790"
+}

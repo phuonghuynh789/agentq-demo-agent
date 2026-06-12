@@ -1,0 +1,9 @@
+streamlit
+requests
+PyPDF2
+python-docx
+pandas
+pytest
+pytest-html
+openai
+responses

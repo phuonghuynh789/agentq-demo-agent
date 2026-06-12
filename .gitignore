@@ -1,0 +1,6 @@
+.greennode.json
+.env
+.agentbase/
+.venv/
+venv/
+web_app/automation/tests/__pycache__ 
