@@ -252,6 +252,9 @@ if 'tc_df' in st.session_state:
 You are an SDET. Write a complete, valid Python `pytest` script that implements the following test cases.
 Use a Service Object or Page Object Model structure (you can mock the POM classes or Service classes at the top of the file).
 
+CRITICAL REQUIREMENT:
+- You must include detailed print or logging statements for the actual API Request (headers, payloads, URL/endpoint) and API Response (status code, body) within the Service Object, Page Object, or test cases so that it can be inspected when running tests.
+
 ORIGINAL API/FEATURE REQUIREMENT (USE THIS AS CONTEXT FOR URLS/ENDPOINTS/PAYLOADS):
 {original_req}
 
@@ -334,6 +337,24 @@ Naming rules for the filename:
                         
             except Exception as e:
                 st.error(f"Lỗi trong quá trình Automation: {e}")
+                
+                # Ghi log request/response (hoặc error) khi chạy lỗi
+                try:
+                    os.makedirs("web_app/Report automation", exist_ok=True)
+                    import datetime
+                    date_prefix = datetime.datetime.now().strftime("%y%m%d_%H%M%S_")
+                    log_file_path = os.path.join("web_app/Report automation", f"{date_prefix}log_test_failed.cs")
+                    
+                    with open(log_file_path, "w", encoding="utf-8") as f:
+                        f.write("========== REQUEST (PROMPT) ==========\n")
+                        f.write(prompt if 'prompt' in locals() else "Chưa tạo được prompt")
+                        f.write("\n\n========== ERROR / RESPONSE ==========\n")
+                        f.write(str(e))
+                        if 'code_text' in locals():
+                            f.write("\n\n========== RAW CODE TEXT ==========\n")
+                            f.write(code_text)
+                except Exception:
+                    pass
 
 elif 'full_response_only' in st.session_state:
     st.markdown("---")
