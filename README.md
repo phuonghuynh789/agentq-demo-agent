@@ -124,6 +124,33 @@ When you need conversation history or long-term memory, use `/agentbase-memory` 
 - **Dynamic Test Automation Generation**: Converts selected Test Cases directly into executable Python `pytest` scripts following Page Object Model (POM) or Service Object architectures.
 - **Automated Test Execution & Reporting**: Runs the generated pytest scripts directly from the browser, logs LLM interactions, and exports detailed HTML regression reports.
 
+## Run Automation Python Scripts Manually
+
+You can execute the generated Python test scripts (`.py`) manually from the terminal using **pytest**. Ensure your terminal is at the root of the project.
+
+### 1. Basic Test Execution (Console Output)
+```bash
+pytest web_app/automation/tests/<file_name>.py
+```
+- Add `-v` for verbose output detailing each test case.
+- Add `-s` to display `print()` statements.
+
+### 2. Execute and Generate HTML Report
+```bash
+pytest web_app/automation/tests/<file_name>.py --html="web_app/Report automation/report_<custom_name>.html" --self-contained-html
+```
+*(Note: Ensure `pytest-html` is installed via `pip install pytest-html`)*
+
+### 3. Run All Test Scripts
+```bash
+pytest web_app/automation/tests/
+```
+
+> **Tip:** If you encounter a `pytest: command not found` error, you can run it as a Python module instead:
+> ```bash
+> python -m pytest web_app/automation/tests/<file_name>.py
+> ```
+
 ## Project Structure
 
 - `main.py` - Agent entrypoint with handler and health check (AgentBase Runtime)

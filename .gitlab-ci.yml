@@ -1,0 +1,26 @@
+stages:
+  - test
+
+regression_test:
+  stage: test
+  image: python:3.10-slim
+  
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install pytest pytest-html requests responses pandas
+    # Nếu muốn cài đầy đủ thư viện của web app:
+    # - pip install -r web_app/requirements.txt
+    
+  script:
+    - echo "Đang thực thi các test case tự động..."
+    - mkdir -p test-results
+    - pytest web_app/automation/tests/ --junitxml=test-results/junit-report.xml --html=test-results/report.html --self-contained-html
+    
+  artifacts:
+    when: always
+    paths:
+      # Lưu lại HTML report và các file log
+      - test-results/
+    reports:
+      # Giúp GitLab hiển thị Test Report trực tiếp trên giao diện Merge Request
+      junit: test-results/junit-report.xml

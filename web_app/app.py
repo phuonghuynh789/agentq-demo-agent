@@ -40,16 +40,22 @@ requirement_text = ""
 
 if input_mode == "Nhập mô tả (Text)":
     requirement_text = st.text_area("Description (Mô tả yêu cầu):", height=200, placeholder="Nhập chuỗi tiếng Việt mô tả yêu cầu cho PRD ở đây...")
+    image_file = st.file_uploader("Hoặc dán/tải lên hình ảnh mô tả (Click vào đây và ấn Ctrl+V / Cmd+V)", type=["png", "jpg", "jpeg"])
 else:
+    image_file = None
     uploaded_file = st.file_uploader("File (Chọn file PRD)", type=["pdf", "docx", "doc"])
     if uploaded_file is not None:
         try:
             if uploaded_file.name.endswith('.pdf'):
                 requirement_text = extract_text_from_pdf(uploaded_file.read())
-                st.success("Đã trích xuất thành công nội dung từ file PDF.")
             elif uploaded_file.name.endswith('.docx') or uploaded_file.name.endswith('.doc'):
                 requirement_text = extract_text_from_docx(uploaded_file.read())
-                st.success("Đã trích xuất thành công nội dung từ file Word.")
+                
+            if len(requirement_text.strip()) < 30:
+                st.error(f"Nội dung trích xuất từ file quá ngắn ({len(requirement_text.strip())} ký tự). Vui lòng đảm bảo file chứa ít nhất 30 ký tự mô tả yêu cầu.")
+                requirement_text = ""
+            else:
+                st.success("Đã trích xuất thành công nội dung từ file.")
         except Exception as e:
             st.error(f"Lỗi khi đọc file: {e}")
 
@@ -57,8 +63,37 @@ else:
 ENDPOINT_URL = "https://endpoint-d04c211f-35df-4a15-9ec4-986f332c8ef6.agentbase-runtime.aiplatform.vngcloud.vn/invocations"
 
 if st.button("🚀 Generate Test Case"):
+    if image_file is not None:
+        with st.spinner("Đang trích xuất yêu cầu từ hình ảnh bằng AI..."):
+            try:
+                import base64
+                client = openai.OpenAI(
+                    api_key=os.environ.get("LLM_API_KEY"),
+                    base_url=os.environ.get("LLM_BASE_URL")
+                )
+                base64_image = base64.b64encode(image_file.read()).decode('utf-8')
+                response = client.chat.completions.create(
+                    model=os.environ.get("LLM_MODEL"),
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": "Hãy mô tả chi tiết giao diện và trích xuất toàn bộ văn bản/yêu cầu có trong hình ảnh này để làm tài liệu thiết kế Test Case."},
+                                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
+                            ]
+                        }
+                    ],
+                    max_tokens=1500
+                )
+                extracted_text = response.choices[0].message.content
+                requirement_text += f"\n\n[Mô tả từ Hình ảnh đính kèm]:\n{extracted_text}"
+            except Exception as e:
+                st.error(f"Lỗi khi phân tích hình ảnh (có thể model hiện tại không hỗ trợ Vision): {e}")
+
     if not requirement_text.strip():
-        st.warning("Vui lòng cung cấp mô tả yêu cầu hoặc tải lên file hợp lệ trước khi Generate.")
+        st.warning("Vui lòng cung cấp mô tả yêu cầu, hình ảnh, hoặc tải lên file hợp lệ trước khi Generate.")
+    elif len(requirement_text.strip()) < 30:
+        st.warning("Mô tả yêu cầu quá ngắn. Vui lòng nhập ít nhất 30 ký tự để Agent có đủ thông tin phân tích và sinh Test Case.")
     else:
         final_requirement = requirement_text
                 
@@ -124,16 +159,46 @@ Requirement:
                 st.session_state.full_response = full_response
                 st.markdown("### Kết quả (Test Cases Generator)")
                 
-                # Parse markdown tables
-                matches = re.findall(r'(\|.*\|(?:\n\|.*\|)+)', full_response)
-                if matches:
-                    # Giả định bảng cuối cùng là bảng Test Cases, các bảng trước là Đánh giá
-                    table_str = matches[-1]
-                    lines = table_str.strip().split('\n')
-                    headers = [col.strip() for col in lines[0].split('|') if col.strip()]
+                # Parse markdown tables manually for robustness
+                lines = full_response.strip().split('\n')
+                tables = []
+                current_table = []
+                for i, line in enumerate(lines):
+                    if '|' in line:
+                        current_table.append((i, line))
+                    else:
+                        if len(current_table) >= 2:
+                            tables.append(current_table)
+                        current_table = []
+                if len(current_table) >= 2:
+                    tables.append(current_table)
+                    
+                if tables:
+                    # Tìm bảng có nhiều cột nhất -> Chính là bảng Test Cases chính
+                    def get_num_cols(table_tuples):
+                        return len([c for c in table_tuples[0][1].split('|') if c.strip()])
+                    
+                    test_case_table = max(tables, key=get_num_cols)
+                    
+                    start_idx = test_case_table[0][0]
+                    end_idx = test_case_table[-1][0]
+                    
+                    # Text trước và sau bảng Test Case (để giữ nguyên cấu trúc Markdown gốc)
+                    eval_text_before = '\n'.join(lines[:start_idx])
+                    eval_text_after = '\n'.join(lines[end_idx+1:])
+                    
+                    t_lines = [item[1] for item in test_case_table]
+                    
+                    def split_row(row_str):
+                        cols = [c.strip() for c in row_str.split('|')]
+                        if cols and cols[0] == '': cols.pop(0)
+                        if cols and cols[-1] == '': cols.pop(-1)
+                        return cols
+                        
+                    headers = split_row(t_lines[0])
                     data = []
-                    for line in lines[2:]:
-                        cols = [col.strip() for col in line.split('|')[1:-1]]
+                    for line in t_lines[2:]:
+                        cols = split_row(line)
                         if len(cols) == len(headers):
                             data.append(cols)
                         elif len(cols) > 0:
@@ -141,13 +206,12 @@ Requirement:
                     
                     df = pd.DataFrame(data, columns=headers)
                     df.insert(0, 'Automation test', False)
-                    st.session_state.tc_df = df
                     
-                    # Hiển thị phần text và bảng đánh giá (loại bỏ bảng test case markdown để tránh hiển thị trùng)
-                    eval_text = full_response.replace(table_str, '')
-                    st.markdown(eval_text)
+                    st.session_state.tc_df = df
+                    st.session_state.eval_text_before = eval_text_before
+                    st.session_state.eval_text_after = eval_text_after
                 else:
-                    st.markdown(full_response)
+                    st.session_state.full_response_only = full_response
             else:
                 st.json(result)
                 
@@ -158,9 +222,17 @@ Requirement:
 
 if 'tc_df' in st.session_state:
     st.markdown("---")
-    st.markdown("### 🤖 Bảng Test Cases (Chọn để chạy Automation)")
+    
+    # Hiển thị phần Markdown TRƯỚC bảng Test Case
+    st.markdown(st.session_state.eval_text_before)
+    
+    # Render bảng Test Case có Checkbox ngay vị trí của nó
     edited_df = st.data_editor(st.session_state.tc_df, hide_index=True, use_container_width=True)
     
+    # Render phần Markdown SAU bảng Test Case (chẳng hạn như Summary Table)
+    st.markdown(st.session_state.eval_text_after)
+    
+    st.markdown("---")
     if st.button("🚀 Run test Automation"):
         selected_rows = edited_df[edited_df['Automation test'] == True]
         if selected_rows.empty:
@@ -217,12 +289,23 @@ Naming rules for the filename:
                 os.makedirs("web_app/automation/tests", exist_ok=True)
                 os.makedirs("web_app/Report automation", exist_ok=True)
                 
-                test_file_path = os.path.join("web_app/automation/tests", file_name)
+                import datetime
+                date_prefix = datetime.datetime.now().strftime("%y%m%d_%H%M%S_")
+                
+                # File Python Script
+                py_file_name = f"{date_prefix}{file_name}"
+                test_file_path = os.path.join("web_app/automation/tests", py_file_name)
                 with open(test_file_path, "w", encoding="utf-8") as f:
                     f.write(code)
                     
-                # Log request and response
-                log_file_name = file_name.replace("test_", "log_test_").replace(".py", ".cs")
+                # File dữ liệu CSV
+                csv_file_name = f"{date_prefix}{file_name.replace('.py', '.csv')}"
+                csv_path = os.path.join("web_app/Report automation", csv_file_name)
+                selected_rows.to_csv(csv_path, index=False, encoding="utf-8-sig")
+                    
+                # File Log
+                base_log_name = file_name.replace("test_", "log_test_").replace(".py", ".cs")
+                log_file_name = f"{date_prefix}{base_log_name}"
                 log_file_path = os.path.join("web_app/Report automation", log_file_name)
                 with open(log_file_path, "w", encoding="utf-8") as f:
                     f.write("========== REQUEST (PROMPT) ==========\n")
@@ -232,7 +315,9 @@ Naming rules for the filename:
                     
                 st.success("✅ Đã sinh mã kiểm thử thành công! Đang thực thi Pytest...")
                 
-                report_path = "web_app/Report automation/report.html"
+                # File Báo cáo HTML
+                report_file_name = f"{date_prefix}report_{file_name.replace('.py', '.html')}"
+                report_path = os.path.join("web_app/Report automation", report_file_name)
                 result = subprocess.run(
                     [sys.executable, "-m", "pytest", test_file_path, f"--html={report_path}", "--self-contained-html"],
                     capture_output=True,
@@ -249,3 +334,7 @@ Naming rules for the filename:
                         
             except Exception as e:
                 st.error(f"Lỗi trong quá trình Automation: {e}")
+
+elif 'full_response_only' in st.session_state:
+    st.markdown("---")
+    st.markdown(st.session_state.full_response_only)

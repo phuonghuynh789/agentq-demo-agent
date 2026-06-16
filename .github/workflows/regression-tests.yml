@@ -1,0 +1,50 @@
+name: Automated Regression Test Suite
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  # Cho phép trigger thủ công từ giao diện GitHub Actions
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Pytest Regression
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Cài đặt các thư viện cần thiết cho việc chạy automation test
+        pip install pytest pytest-html requests responses pandas
+        
+        # Lưu ý: Nếu có thêm dependencies phức tạp, có thể dùng:
+        # pip install -r web_app/requirements.txt
+
+    - name: Run Pytest
+      # Lệnh này sẽ chạy tất cả các test case được Agent sinh ra trong thư mục automation/tests
+      run: |
+        mkdir -p test-results
+        pytest web_app/automation/tests/ \
+          --junitxml=test-results/junit-report.xml \
+          --html=test-results/report.html \
+          --self-contained-html
+
+    - name: Upload Test Report
+      # Luôn upload report cho dù pass hay fail
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: pytest-regression-results
+        path: test-results/
