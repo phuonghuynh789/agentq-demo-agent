@@ -65,8 +65,43 @@ if st.button("🚀 Generate Test Case"):
         st.session_state.original_requirement = final_requirement
         st.info("Đang gọi Agent... (có thể mất 1-2 phút tùy vào độ dài của yêu cầu)")
         
+        prompt_message = f"""Step 1:
+Analyze the feature complexity and assign a Complexity Score from 1 to 10.
+
+Step 2:
+Determine the recommended number of test cases based on complexity.
+
+Complexity Rules:
+
+Score 1-3: Generate up to 15 test cases
+Score 4-6: Generate up to 30 test cases
+Score 7-8: Generate up to 50 test cases
+Score 9-10: Generate up to 80 test cases
+
+Step 3:
+Distribute test cases by risk:
+
+Functional: 40%
+Negative: 30%
+Boundary & Edge: 15%
+Security: 10%
+Regression: 5%
+
+Step 4:
+Generate test cases.
+
+Output:
+
+Complexity Score
+Recommended Number of Test Cases
+Risk Areas Identified
+Test Cases Table
+
+Requirement:
+{final_requirement}"""
+
         payload = {
-            "message": f"Vui lòng tạo TỐI ĐA 5 test case quan trọng nhất cho yêu cầu sau (hãy trả lời ngắn gọn để tránh timeout hệ thống):\n\n{final_requirement}"
+            "message": prompt_message
         }
         headers = {
             "Content-Type": "application/json",
@@ -89,10 +124,11 @@ if st.button("🚀 Generate Test Case"):
                 st.session_state.full_response = full_response
                 st.markdown("### Kết quả (Test Cases Generator)")
                 
-                # Parse markdown table
-                match = re.search(r'(\|.*\|(?:\n\|.*\|)+)', full_response)
-                if match:
-                    table_str = match.group(1)
+                # Parse markdown tables
+                matches = re.findall(r'(\|.*\|(?:\n\|.*\|)+)', full_response)
+                if matches:
+                    # Giả định bảng cuối cùng là bảng Test Cases, các bảng trước là Đánh giá
+                    table_str = matches[-1]
                     lines = table_str.strip().split('\n')
                     headers = [col.strip() for col in lines[0].split('|') if col.strip()]
                     data = []
@@ -107,9 +143,9 @@ if st.button("🚀 Generate Test Case"):
                     df.insert(0, 'Automation test', False)
                     st.session_state.tc_df = df
                     
-                    # Also display full response
-                    with st.expander("Xem toàn bộ phản hồi từ Agent"):
-                        st.markdown(full_response)
+                    # Hiển thị phần text và bảng đánh giá (loại bỏ bảng test case markdown để tránh hiển thị trùng)
+                    eval_text = full_response.replace(table_str, '')
+                    st.markdown(eval_text)
                 else:
                     st.markdown(full_response)
             else:

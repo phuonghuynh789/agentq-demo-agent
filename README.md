@@ -2,23 +2,24 @@
 
 A GreenNode AgentBase agent.
 
-## Use Case: AI QA Engineer - Tự động hóa quá trình kiểm thử
+## Use Case: AI QA Engineer - Automated Testing Pipeline
 
-**1. Vấn đề (The Problem):**
-Trong quy trình phát triển phần mềm, việc phân tích tài liệu yêu cầu (PRD) để thiết kế Test Case và viết Script Automation tốn rất nhiều thời gian, công sức và dễ xảy ra thiếu sót do thao tác thủ công. 
+**1. The Problem:**
+In the software development lifecycle, analyzing Product Requirements Documents (PRDs) to design Test Cases and write Automation Scripts is highly time-consuming, labor-intensive, and prone to human error when done manually.
 
-**2. Người dùng mục tiêu (Target Users):**
-- Kỹ sư QA (Manual & Automation Tester)
-- QA Manager / Test Lead
-- Nhà phát triển phần mềm (Developer)
+**2. Target Users:**
+- QA Engineers (Manual & Automation Testers)
+- QA Managers / Test Leads
+- Software Developers
 
-**3. Cách Agent giải quyết (How it works):**
-Đóng vai trò là một Senior QA Engineer, Agent tiếp nhận mô tả yêu cầu hoặc file tài liệu (PDF/Word) từ người dùng qua giao diện Web. Nhờ sức mạnh của LLM, Agent sẽ tự động phân tích nghiệp vụ, chỉ ra các trường hợp cần kiểm thử và sinh ra bảng Test Case hoàn chỉnh. Sau đó, khi người dùng chọn các Test Case muốn tự động hoá, Agent sẽ viết luôn mã nguồn Automation Test (bằng Pytest) theo chuẩn Service/Page Object Model, rồi tự động thực thi và xuất báo cáo HTML.
+**3. How it works:**
+Acting as a Senior QA Engineer, the Agent receives requirement descriptions or document files (PDF/Word) from users via a Web interface. Leveraging the power of LLMs, the Agent automatically analyzes the business logic, **evaluates the complexity (Complexity Score), and allocates risk distribution (Risk Areas)** to calculate the optimal number of test scenarios *before* generating a complete Test Case table. 
+Subsequently, when the user selects the Test Cases they want to automate, the Agent directly writes the Automation Test source code (using Pytest) following the Service/Page Object Model standards, automatically executes them, and exports an HTML report.
 
-**4. Giá trị mang lại (Business Value):**
-- **Tiết kiệm 80% thời gian**: Giải phóng QA khỏi các công việc thiết kế Test Case và code boilerplate lặp đi lặp lại.
-- **Tăng độ bao phủ (Coverage)**: Đảm bảo không bỏ sót các kịch bản Edge Case, Security hay Performance.
-- **Triển khai nhanh chóng**: Tạo ra một bộ test Regression chuẩn mực, dễ dàng tái sử dụng và tích hợp vào hệ thống CI/CD.
+**4. Business Value:**
+- **Save 80% of Time**: Frees QA engineers from repetitive Test Case design and writing boilerplate code.
+- **Increase Test Coverage**: Ensures that Edge Cases, Security, and Performance scenarios are not overlooked.
+- **Rapid Deployment**: Generates a standardized Regression test suite that is easy to reuse and integrate into CI/CD pipelines.
 
 ---
 
@@ -118,7 +119,7 @@ When you need conversation history or long-term memory, use `/agentbase-memory` 
 
 ## Key Features
 
-- **Test Case Generation**: Automatically analyzes requirements and PRDs to generate structured, comprehensive test cases.
+- **Test Case Generation**: Automatically analyzes requirements and PRDs to evaluate complexity, distribute test coverage by risk areas, and generate structured, comprehensive test cases.
 - **Streamlit Web Interface**: User-friendly frontend (`web_app/app.py`) allowing users to input descriptions or upload PRD documents (PDF/Word).
 - **Dynamic Test Automation Generation**: Converts selected Test Cases directly into executable Python `pytest` scripts following Page Object Model (POM) or Service Object architectures.
 - **Automated Test Execution & Reporting**: Runs the generated pytest scripts directly from the browser, logs LLM interactions, and exports detailed HTML regression reports.
