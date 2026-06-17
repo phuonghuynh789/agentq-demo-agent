@@ -1,4 +1,4 @@
-# test-case-generator
+# Test-case-generator
 
 A GreenNode AgentBase agent.
 
