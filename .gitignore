@@ -4,3 +4,5 @@
 .venv/
 venv/
 web_app/automation/tests/__pycache__ 
+web_app/automation/tests/
+web_app/Report automation/
