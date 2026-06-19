@@ -7,3 +7,4 @@ pytest
 pytest-html
 openai
 responses
+python-dotenv

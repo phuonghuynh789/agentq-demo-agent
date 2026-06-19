@@ -15,6 +15,109 @@ load_dotenv()
 
 st.set_page_config(page_title="Test Case Generator", page_icon="📋", layout="wide")
 
+st.markdown("""
+<style>
+/* Global Font & Background */
+.stApp {
+    background-color: #ffffff;
+    font-family: 'Optimistic VF', Montserrat, Helvetica, Arial, sans-serif;
+    color: #0a1317;
+}
+
+/* Typography Hierarchy */
+h1 {
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    color: #0a1317 !important;
+    letter-spacing: 0 !important;
+}
+h2, h3 {
+    font-size: 28px !important;
+    font-weight: 500 !important;
+    color: #0a1317 !important;
+}
+p, label {
+    font-size: 16px;
+    color: #0a1317;
+}
+
+/* Base Pill Button (Meta Default/Marketing - Black) */
+div.stButton > button[kind="secondary"] {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 14px 30px !important;
+    height: auto !important;
+    min-height: 48px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    transition: background-color 0.2s ease;
+}
+div.stButton > button[kind="secondary"]:hover {
+    background-color: #444950 !important;
+    color: #ffffff !important;
+}
+div.stButton > button[kind="secondary"]:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Primary Button (Meta Commerce/Action - Cobalt) */
+div.stButton > button[kind="primary"] {
+    background-color: #0064e0 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 14px 30px !important;
+    height: auto !important;
+    min-height: 48px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    transition: background-color 0.2s ease;
+}
+div.stButton > button[kind="primary"]:hover {
+    background-color: #0457cb !important;
+    color: #ffffff !important;
+}
+div.stButton > button[kind="primary"]:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Ensure button text stays white */
+div.stButton > button p, div.stButton > button span {
+    color: #ffffff !important;
+}
+
+/* Text Inputs & Text Areas & File Uploader */
+div.stTextArea > div > div > textarea, 
+div.stTextInput > div > div > input,
+div[data-testid="stFileUploader"] {
+    background-color: #ffffff !important;
+    border: 1px solid #ced0d4 !important;
+    border-radius: 8px !important;
+    color: #1c1e21 !important;
+    padding: 12px 16px !important;
+}
+div.stTextArea > div > div > textarea:focus, 
+div.stTextInput > div > div > input:focus {
+    border: 2px solid #1876f2 !important;
+    box-shadow: none !important;
+}
+
+/* Radio buttons */
+div.row-widget.stRadio > div {
+    color: #1c1e21;
+}
+
+/* Cards & Message Boxes */
+div[data-testid="stAlert"] {
+    border-radius: 16px !important;
+    border: 1px solid #dee3e9 !important;
+    box-shadow: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📋 Test Case Generator Agent")
 st.markdown("Cung cấp yêu cầu (PRD) để Agent tự động phân tích và sinh test case.")
 
@@ -39,7 +142,7 @@ input_mode = st.radio("Chọn phương thức nhập Requirement:", ("Nhập mô
 requirement_text = ""
 
 if input_mode == "Nhập mô tả (Text)":
-    requirement_text = st.text_area("Description (Mô tả yêu cầu):", height=200, placeholder="Nhập chuỗi tiếng Việt mô tả yêu cầu cho PRD ở đây...")
+    requirement_text = st.text_area("Description (Mô tả yêu cầu):", height=200, placeholder="Nhập chuỗi tiếng Việt mô tả yêu cầu cho PRD ở đây...\nHỗ trợ REST, GRPC API (Paste curl / grpcurl) & automation")
     image_file = st.file_uploader("Hoặc dán/tải lên hình ảnh mô tả (Click vào đây và ấn Ctrl+V / Cmd+V)", type=["png", "jpg", "jpeg"])
 else:
     image_file = None
@@ -52,7 +155,7 @@ else:
                 requirement_text = extract_text_from_docx(uploaded_file.read())
                 
             if len(requirement_text.strip()) < 30:
-                st.error(f"Nội dung trích xuất từ file quá ngắn ({len(requirement_text.strip())} ký tự). Vui lòng đảm bảo file chứa ít nhất 30 ký tự mô tả yêu cầu.")
+                st.error(f"Nội dung trích xuất từ file quá ngắn ({len(requirement_text.strip())} ký tự). Khả năng cao đây là file PDF/Word dạng hình ảnh (scanned). Vui lòng copy trực tiếp văn bản, hoặc chụp ảnh và tải lên ở mục 'Nhập mô tả (Text)'.")
                 requirement_text = ""
             else:
                 st.success("Đã trích xuất thành công nội dung từ file.")
@@ -205,6 +308,9 @@ Requirement:
                             data.append(cols + [""] * (len(headers) - len(cols)))
                     
                     df = pd.DataFrame(data, columns=headers)
+                    for col in df.columns:
+                        df[col] = df[col].astype(str).str.replace(r'<br\s*/?>', '\n', case=False, regex=True)
+                        df[col] = df[col].str.replace(r'&lt;br\s*/?&gt;', '\n', case=False, regex=True)
                     df.insert(0, 'Automation test', False)
                     
                     st.session_state.tc_df = df
@@ -233,7 +339,20 @@ if 'tc_df' in st.session_state:
     st.markdown(st.session_state.eval_text_after)
     
     st.markdown("---")
-    if st.button("🚀 Run test Automation"):
+    
+    original_req = st.session_state.get('original_requirement', '')
+    import re
+    has_url = bool(re.search(r'(https?://|grpc://)[^\s]+', original_req, re.IGNORECASE))
+    has_curl = "curl" in original_req.lower() or "grpcurl" in original_req.lower()
+    is_testable = has_url or has_curl
+    
+    col1, col2 = st.columns([2, 8])
+    with col1:
+        run_btn = st.button("🚀 Run test Automation", type="primary", disabled=not is_testable)
+    with col2:
+        st.markdown("<div style='padding-top: 15px; color: #5d6c7b; font-size: 14px;'><i>(chỉ dùng cho REST / GRPC API)</i></div>", unsafe_allow_html=True)
+        
+    if run_btn:
         selected_rows = edited_df[edited_df['Automation test'] == True]
         if selected_rows.empty:
             st.warning("Vui lòng tick chọn ít nhất 1 Test Case trong cột 'Automation test' để chạy.")
